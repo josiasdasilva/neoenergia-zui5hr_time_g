@@ -1,0 +1,367 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZHCM_TRATAMENTO_PONTO_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="BancoDeHoras" sap:content-version="1">
+				<Key><PropertyRef Name="PERNR"/></Key><Property Name="PERNR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="NOME" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DT_OCOR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SD_BH_ANT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SD_BH_MES" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SD_BH_ACU" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="COMP_SD_BH" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SCHKZ" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WERKS" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WERKS_DESC" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="BTRTL" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="BTRTL_DESC" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ORGEH" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ORGEH_DESC" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="KOSTL" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="KOSTL_DESC" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PERSG" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PERSG_DESC" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TIPO_EQUIPE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CabecalhoDeepFeriado" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DataDaTroca" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DataDoFeriado" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="CabecalhotoFeriadoNav" Relationship="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhotoFeriado"
+					FromRole="FromRole_CabecalhotoFeriado" ToRole="ToRole_CabecalhotoFeriado"/></EntityType>
+			<EntityType Name="CabecalhoDeepHorarioPadrao" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ABWGR" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GTEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="CabecalhoHorarioPadraoToTrat" Relationship="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoHorarioPadraoToTratamento"
+					FromRole="FromRole_CabecalhoHorarioPadraoToTratamento" ToRole="ToRole_CabecalhoHorarioPadraoToTratamento"/></EntityType>
+			<EntityType Name="CabecalhoDeepJustPadrao" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="JustPadraoToTratamentoNav" Relationship="ZHCM_TRATAMENTO_PONTO_SRV.JustPadraoToTratamento"
+					FromRole="FromRole_JustPadraoToTratamento" ToRole="ToRole_JustPadraoToTratamento"/></EntityType>
+			<EntityType Name="CabecalhoEspelho" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ano" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Mes" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="CabecalhoEspelhoToListaNav" Relationship="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoEspelhoToLista"
+					FromRole="FromRole_CabecalhoEspelhoToLista" ToRole="ToRole_CabecalhoEspelhoToLista"/></EntityType>
+			<EntityType Name="CabecalhoMarcacao" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Nome" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="HoraContratual" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WerksDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Orgeh" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="OrgehDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Kostl" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="KostlDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Persg" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PersgDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Schkz" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TipoDeEquipe" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Schkz_Desc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="CabecalhoToEditarMarcacaoNav" Relationship="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoToEditarMarcacao"
+					FromRole="FromRole_CabecalhoToEditarMarcacao" ToRole="ToRole_CabecalhoToEditarMarcacao"/></EntityType>
+			<EntityType Name="CabecalhoTrocarHorario" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PeriodoInicial" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PeriodoFinal" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NovoHorario" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TrocaPermanente" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TrocaProvisoria" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Wf" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="TrocarHorarioSet" Relationship="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoToTrocarHorario"
+					FromRole="FromRole_CabecalhoToTrocarHorario" ToRole="ToRole_CabecalhoToTrocarHorario"/></EntityType>
+			<EntityType Name="CountLine" sap:content-version="1">
+				<Key><PropertyRef Name="lineValue"/></Key><Property Name="lineValue" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="DetalhePlanoHor" sap:content-version="1">
+				<Key><PropertyRef Name="PERNR"/></Key><Property Name="PERNR" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="DATUM" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DIA_SEM" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TPROG" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TTEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SOBEG" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SOEND" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="STDAZ" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TATXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ZMODN" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PTEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MOFID" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="FTEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WERKS" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="EditarMarcacao" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PERNR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DATUM" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="LTIME_01" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="VTKNEN_01" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ABWGR_01" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="LTIME_02" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="VTKNEN_02" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ABWGR_02" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="LTIME_03" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="VTKNEN_03" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ABWGR_03" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="LTIME_04" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="VTKNEN_04" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ABWGR_04" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="LTIME_05" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="VTKNEN_05" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ABWGR_05" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="LTIME_06" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="VTKNEN_06" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ABWGR_06" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PDSNR_01" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PDSNR_02" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PDSNR_03" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PDSNR_04" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TERID_01" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TERID_02" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TERID_03" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TERID_04" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="FuncionarioFeriado" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Nome" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Werks_Desc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Orgeh" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Orgeh_Desc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kostl" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Kostl_Desc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Persg" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Persg_Desc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Tipo_Desc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Schkz" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Schkz_Desc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="HorarioPadrao" sap:content-version="1">
+				<Key><PropertyRef Name="MotivoNovoMarcacao"/></Key><Property Name="MotivoNovoMarcacao" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ABWGR" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GTEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Justificar" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AWART" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ATEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TP_AWART" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="TratamentoSet" Relationship="ZHCM_TRATAMENTO_PONTO_SRV.JustificativaToTratamento"
+					FromRole="FromRole_JustificativaToTratamento" ToRole="ToRole_JustificativaToTratamento"/></EntityType>
+			<EntityType Name="Lista" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AWART" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ATEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TP_AWART" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ListaImg" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/><PropertyRef Name="Mes"/><PropertyRef Name="Ano"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" MaxLength="4000" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ListaUrl" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ListaMIMEType" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mes" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Ano" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="NovoHorario" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NovoHorarioC" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Schkz" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Btrtl" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/></EntityType>
+			<EntityType Name="PlanoHorario" sap:content-version="1">
+				<Key><PropertyRef Name="PERNR"/></Key><Property Name="PERNR" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CNAME" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="EMAIL" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WERKS" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WERKS_DESC" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BTRTL" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="BTRTL_DESC" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ORGEH" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ORGEH_DESC" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="KOSTL" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="KOSTL_DESC" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PERSG" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PERSG_DESC" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SCHKZ" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SCHKZ_DESC" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TIPO_EQUIPE" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MOFID" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="PlanoHorarioToDetalheNav" Relationship="ZHCM_TRATAMENTO_PONTO_SRV.PlanoHorarioToDetalheNav"
+					FromRole="FromRole_PlanoHorarioToDetalheNav" ToRole="ToRole_PlanoHorarioToDetalheNav"/></EntityType>
+			<EntityType Name="SaldoBhMes" sap:content-version="1">
+				<Key><PropertyRef Name="PERNR"/></Key><Property Name="PERNR" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="NOME" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DT_OCOR" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SD_BH_ANT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SD_BH_MES" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SD_BH_ACU" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="COMP_SD_BH" Type="Edm.String" Nullable="false" MaxLength="800" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DATUM" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="APUR" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WERKS" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Tratamento" sap:content-version="1">
+				<Key><PropertyRef Name="PERNR"/></Key><Property Name="PERNR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="NOME" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DT_OCOR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DIA_SEM" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="HR_TEOR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DIA_SEGUINTE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MARCACOES" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="OCORRENCIA" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="APUR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DESCR_OCOR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SHOW_2011" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="EDIT_2011" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TP_AUS" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TXT_AUS" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ZTART" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="APUR_CENT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="INI_OCOR_CENT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="FIM_OCOR_CENT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WERKS" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WERKS_DESC" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ORGEH" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ORGEH_DESC" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="KOSTL" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="KOSTL_DESC" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PERSG" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PERSG_DESC" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TIPO_EQUIPE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CBOX" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PERNRERROR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="NOMEERROR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DATAERROR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MESSAGEERROR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SCHKZ" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="BTRTL" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TP_ZTART" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MES" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ANO" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DESC_PERIODO" Type="Edm.String" Nullable="false" MaxLength="45" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="TratamentoToEditarNav" Relationship="ZHCM_TRATAMENTO_PONTO_SRV.TratamentoToEditar"
+					FromRole="FromRole_TratamentoToEditar" ToRole="ToRole_TratamentoToEditar"/></EntityType>
+			<EntityType Name="TrocarHorario" sap:content-version="1">
+				<Key><PropertyRef Name="NumeroPessoal"/></Key><Property Name="NumeroPessoal" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Nome" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="HoraContratual" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="WerksDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Orgeh" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="OrgehDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Kostl" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="KostlDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Persg" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PersgDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Schkz" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="TipoDeEquipe" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Schkz_Desc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Btrtl" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Btrtl_Desc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Error" Type="Edm.String" Nullable="false" MaxLength="300" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CallWF" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TP_ERRO" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TP_TROCA" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="hr_novo" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="hr_atual" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="CabecalhoHorarioPadraoToTratamento" sap:content-version="1"><End Type="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoDeepHorarioPadrao" Multiplicity="1" Role="FromRole_CabecalhoHorarioPadraoToTratamento"/><End Type="ZHCM_TRATAMENTO_PONTO_SRV.Tratamento" Multiplicity="*" Role="ToRole_CabecalhoHorarioPadraoToTratamento"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_CabecalhoHorarioPadraoToTratamento"><PropertyRef Name="NumeroPessoal"/></Principal>
+					<Dependent Role="ToRole_CabecalhoHorarioPadraoToTratamento"><PropertyRef Name="PERNR"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="CabecalhoEspelhoToLista" sap:content-version="1"><End Type="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoEspelho" Multiplicity="1" Role="FromRole_CabecalhoEspelhoToLista"/><End Type="ZHCM_TRATAMENTO_PONTO_SRV.Lista" Multiplicity="*" Role="ToRole_CabecalhoEspelhoToLista"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_CabecalhoEspelhoToLista"><PropertyRef Name="NumeroPessoal"/></Principal>
+					<Dependent Role="ToRole_CabecalhoEspelhoToLista"><PropertyRef Name="NumeroPessoal"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="JustPadraoToTratamento" sap:content-version="1"><End Type="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoDeepJustPadrao" Multiplicity="1" Role="FromRole_JustPadraoToTratamento"/><End Type="ZHCM_TRATAMENTO_PONTO_SRV.Tratamento" Multiplicity="*" Role="ToRole_JustPadraoToTratamento"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_JustPadraoToTratamento"><PropertyRef Name="NumeroPessoal"/></Principal>
+					<Dependent Role="ToRole_JustPadraoToTratamento"><PropertyRef Name="PERNR"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="CabecalhotoFeriado" sap:content-version="1"><End Type="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoDeepFeriado" Multiplicity="1" Role="FromRole_CabecalhotoFeriado"/><End Type="ZHCM_TRATAMENTO_PONTO_SRV.FuncionarioFeriado" Multiplicity="*" Role="ToRole_CabecalhotoFeriado"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_CabecalhotoFeriado"><PropertyRef Name="NumeroPessoal"/></Principal>
+					<Dependent Role="ToRole_CabecalhotoFeriado"><PropertyRef Name="NumeroPessoal"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="CabecalhoToEditarMarcacao" sap:content-version="1"><End Type="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoMarcacao" Multiplicity="1" Role="FromRole_CabecalhoToEditarMarcacao"/><End Type="ZHCM_TRATAMENTO_PONTO_SRV.EditarMarcacao" Multiplicity="*" Role="ToRole_CabecalhoToEditarMarcacao"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_CabecalhoToEditarMarcacao"><PropertyRef Name="NumeroPessoal"/></Principal>
+					<Dependent Role="ToRole_CabecalhoToEditarMarcacao"><PropertyRef Name="PERNR"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="PlanoHorarioToDetalheNav" sap:content-version="1"><End Type="ZHCM_TRATAMENTO_PONTO_SRV.PlanoHorario" Multiplicity="1" Role="FromRole_PlanoHorarioToDetalheNav"/><End Type="ZHCM_TRATAMENTO_PONTO_SRV.DetalhePlanoHor" Multiplicity="*" Role="ToRole_PlanoHorarioToDetalheNav"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_PlanoHorarioToDetalheNav"><PropertyRef Name="PERNR"/></Principal>
+					<Dependent Role="ToRole_PlanoHorarioToDetalheNav"><PropertyRef Name="PERNR"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="JustificativaToTratamento" sap:content-version="1"><End Type="ZHCM_TRATAMENTO_PONTO_SRV.Justificar" Multiplicity="1" Role="FromRole_JustificativaToTratamento"/><End Type="ZHCM_TRATAMENTO_PONTO_SRV.Tratamento" Multiplicity="*" Role="ToRole_JustificativaToTratamento"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_JustificativaToTratamento"><PropertyRef Name="NumeroPessoal"/></Principal>
+					<Dependent Role="ToRole_JustificativaToTratamento"><PropertyRef Name="PERNR"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="TratamentoToEditar" sap:content-version="1"><End Type="ZHCM_TRATAMENTO_PONTO_SRV.Tratamento" Multiplicity="1" Role="FromRole_TratamentoToEditar"/><End Type="ZHCM_TRATAMENTO_PONTO_SRV.EditarMarcacao" Multiplicity="*" Role="ToRole_TratamentoToEditar"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_TratamentoToEditar"><PropertyRef Name="PERNR"/></Principal>
+					<Dependent Role="ToRole_TratamentoToEditar"><PropertyRef Name="PERNR"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="CabecalhoToTrocarHorario" sap:content-version="1"><End Type="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoTrocarHorario" Multiplicity="1" Role="FromRole_CabecalhoToTrocarHorario"/><End Type="ZHCM_TRATAMENTO_PONTO_SRV.TrocarHorario" Multiplicity="*" Role="ToRole_CabecalhoToTrocarHorario"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_CabecalhoToTrocarHorario"><PropertyRef Name="NumeroPessoal"/></Principal>
+					<Dependent Role="ToRole_CabecalhoToTrocarHorario"><PropertyRef Name="NumeroPessoal"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZHCM_TRATAMENTO_PONTO_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="BancoDeHorasSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.BancoDeHoras" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CabecalhoDeepFeriadoSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoDeepFeriado" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CabecalhoDeepHorarioPadraoSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoDeepHorarioPadrao" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CabecalhoDeepJustPadraoSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoDeepJustPadrao" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CabecalhoEspelhoSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoEspelho" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CabecalhoMarcacaoSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoMarcacao" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CabecalhoTrocarHorarioSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoTrocarHorario" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CountLineSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.CountLine" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="DetalhePlanoHorSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.DetalhePlanoHor" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="EditarMarcacaoSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.EditarMarcacao" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="FuncionarioFeriadoSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.FuncionarioFeriado" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="HorarioPadraoSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.HorarioPadrao" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="JustificarSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.Justificar" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ListaSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.Lista" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ListaImgSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.ListaImg" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="NovoHorarioSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.NovoHorario" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="PlanoHorarioSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.PlanoHorario" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SaldoBhMesSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.SaldoBhMes" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="TratamentoSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.Tratamento" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="TrocarHorarioSet" EntityType="ZHCM_TRATAMENTO_PONTO_SRV.TrocarHorario" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<AssociationSet Name="CabecalhoEspelhoToListaSet" Association="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoEspelhoToLista" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="CabecalhoEspelhoSet" Role="FromRole_CabecalhoEspelhoToLista"/><End EntitySet="ListaSet" Role="ToRole_CabecalhoEspelhoToLista"/></AssociationSet>
+				<AssociationSet Name="CabecalhotoFeriadoSet" Association="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhotoFeriado" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="CabecalhoDeepFeriadoSet" Role="FromRole_CabecalhotoFeriado"/><End EntitySet="FuncionarioFeriadoSet" Role="ToRole_CabecalhotoFeriado"/></AssociationSet>
+				<AssociationSet Name="TratamentoToEditarSet" Association="ZHCM_TRATAMENTO_PONTO_SRV.TratamentoToEditar" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="TratamentoSet" Role="FromRole_TratamentoToEditar"/><End EntitySet="EditarMarcacaoSet" Role="ToRole_TratamentoToEditar"/></AssociationSet>
+				<AssociationSet Name="CabecalhoToTrocarHorarioSet" Association="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoToTrocarHorario" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="CabecalhoTrocarHorarioSet" Role="FromRole_CabecalhoToTrocarHorario"/><End EntitySet="TrocarHorarioSet" Role="ToRole_CabecalhoToTrocarHorario"/></AssociationSet>
+				<AssociationSet Name="CabecalhoHorarioPadraoToTratamentoSet" Association="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoHorarioPadraoToTratamento"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="CabecalhoDeepHorarioPadraoSet" Role="FromRole_CabecalhoHorarioPadraoToTratamento"/><End EntitySet="TratamentoSet" Role="ToRole_CabecalhoHorarioPadraoToTratamento"/></AssociationSet>
+				<AssociationSet Name="JustificativaToTratamentoSet" Association="ZHCM_TRATAMENTO_PONTO_SRV.JustificativaToTratamento" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="JustificarSet" Role="FromRole_JustificativaToTratamento"/><End EntitySet="TratamentoSet" Role="ToRole_JustificativaToTratamento"/></AssociationSet>
+				<AssociationSet Name="JustPadraoToTratamentoSet" Association="ZHCM_TRATAMENTO_PONTO_SRV.JustPadraoToTratamento" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="CabecalhoDeepJustPadraoSet" Role="FromRole_JustPadraoToTratamento"/><End EntitySet="TratamentoSet" Role="ToRole_JustPadraoToTratamento"/></AssociationSet>
+				<AssociationSet Name="CabecalhoToEditarMarcacaoSet" Association="ZHCM_TRATAMENTO_PONTO_SRV.CabecalhoToEditarMarcacao" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="CabecalhoMarcacaoSet" Role="FromRole_CabecalhoToEditarMarcacao"/><End EntitySet="EditarMarcacaoSet" Role="ToRole_CabecalhoToEditarMarcacao"/></AssociationSet>
+				<AssociationSet Name="PlanoHorarioToDetalheNavSet" Association="ZHCM_TRATAMENTO_PONTO_SRV.PlanoHorarioToDetalheNav" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PlanoHorarioSet" Role="FromRole_PlanoHorarioToDetalheNav"/><End EntitySet="DetalhePlanoHorSet" Role="ToRole_PlanoHorarioToDetalheNav"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="http://brnep278.neoenergia.net:44300/sap/opu/odata/sap/ZODHR_SS_TREATED_TM_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="http://brnep278.neoenergia.net:44300/sap/opu/odata/sap/ZODHR_SS_TREATED_TM_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,359 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZGLHR_SEARCH_HELP_SRV" xml:lang="pt" sap:schema-version="1">
+			<EntityType Name="E_SH_RETIREMENT" sap:content-version="1">
+				<Key><PropertyRef Name="RETIREMENT_CODE"/></Key><Property Name="RETIREMENT_CODE" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="RETIREMENT_CODE"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DESCRIPTION" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="DESCRIPTION"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_LIFE_ASSURANCE_PLAN" sap:content-version="1">
+				<Key><PropertyRef Name="BPLAN"/></Key><Property Name="BPLAN" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Benefit plan" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LTEXT" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_ACCOMMODATION" sap:content-version="1">
+				<Key><PropertyRef Name="BPLAN"/><PropertyRef Name="IM_BPLAN"/></Key><Property Name="BPLAN" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Benefit plan" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IM_BPLAN" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Benefit plan"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BOPTI" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Health Plan Option"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LTEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Long Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_EDUC_FORM" sap:content-version="1">
+				<Key><PropertyRef Name="ESCOL"/></Key><Property Name="ESCOL" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Education level"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ESCDD" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="c" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_ARH" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Personnel area" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Personnel Area"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_EMPLOYEE" sap:content-version="1">
+				<Key><PropertyRef Name="PERSNO"/></Key><Property Name="PERSNO" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel no." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CNAME" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Full Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_OTHERS_BENEFITS_OPT" sap:content-version="1">
+				<Key><PropertyRef Name="IM_BPLAN"/><PropertyRef Name="LEVL1"/></Key><Property Name="IM_BPLAN" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Benefit plan"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LEVL1" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Option" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LTEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Long Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ACCOMMOD" sap:content-version="1">
+				<Key><PropertyRef Name="BPLAN"/></Key><Property Name="BPLAN" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Benefit plan" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BOPTI" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Health Plan Option"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LTEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Long Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_PLANS" sap:content-version="1">
+				<Key><PropertyRef Name="IM_PERNR"/></Key><Property Name="IM_PERNR" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="IM_PERNR" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BPLAN" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Benefit plan" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LTEXT" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="LTEXT" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="PLANS" Relationship="ZGLHR_SEARCH_HELP_SRV.A_PLANS" FromRole="FromRole_A_PLANS" ToRole="ToRole_A_PLANS"/></EntityType>
+			<EntityType Name="E_GET_NAME" sap:content-version="1">
+				<Key><PropertyRef Name="IM_PERNR"/></Key><Property Name="IM_PERNR" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel No."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EX_CNAME" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Full Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_RACE" sap:content-version="1">
+				<Key><PropertyRef Name="CODE"/></Key><Property Name="RACE" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Race" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CODE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_GHE_ARH" sap:content-version="1">
+				<Key><PropertyRef Name="GHECODE"/><PropertyRef Name="GHEDESCR"/><PropertyRef Name="GHEPERSA"/><PropertyRef Name="NAME1"/><PropertyRef Name="GHEBTRTL"/><PropertyRef Name="BTEXT"/><PropertyRef Name="GHEORGEH"/><PropertyRef Name="ORGEH_TXT"/></Key><Property Name="GHECODE" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GHEDESCR" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GHEPERSA" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="NAME1" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GHEBTRTL" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="BTEXT" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GHEORGEH" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ORGEH_TXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_PERSK" sap:content-version="1">
+				<Key><PropertyRef Name="PERSK"/></Key><Property Name="PERSK" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PTEXT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IM_PERSG" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_PERSA_RDH" sap:content-version="1">
+				<Key><PropertyRef Name="PERSA"/></Key><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PERSA" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PBTXT" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_BTRTL_RHD" sap:content-version="1">
+				<Key><PropertyRef Name="BTRTL"/></Key><Property Name="BTRTL" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PTBTXT" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_ARFN_RHD" sap:content-version="1">
+				<Key><PropertyRef Name="AREAFUNC"/></Key><Property Name="AREAFUNC" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="AREAFUNCDESCR" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_GHE_RHD" sap:content-version="1">
+				<Key><PropertyRef Name="GHECODE"/></Key><Property Name="GHECODE" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GHEDESCR" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ImWerks" sap:content-version="1">
+				<Key><PropertyRef Name="WERKS"/></Key><Property Name="WERKS" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_SARH" sap:content-version="1">
+				<Key><PropertyRef Name="BTRTL"/></Key><Property Name="BTRTL" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="BTEXT" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WERKS" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_COUNTRY" sap:content-version="1">
+				<Key><PropertyRef Name="LAND1"/></Key><Property Name="LAND1" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="LAND1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LANDX" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="LANDX" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_REGION" sap:content-version="1">
+				<Key><PropertyRef Name="IM_COUNTRY"/><PropertyRef Name="BLAND"/></Key><Property Name="IM_COUNTRY" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BLAND" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Region" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BEZEI" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_NATIONALITY" sap:content-version="1">
+				<Key><PropertyRef Name="LAND1"/></Key><Property Name="LAND1" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="LAND1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NATIO" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="NATIO" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_DEPENDENTS" sap:content-version="1">
+				<Key><PropertyRef Name="SUBTY"/></Key><Property Name="SUBTY" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Subtype" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="STEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_MARITAL_STATUS" sap:content-version="1">
+				<Key><PropertyRef Name="FAMST"/></Key><Property Name="FAMST" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Marital Stat." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FTEXT" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Marital Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_LOCAL_OF_BIRTH" sap:content-version="1">
+				<Key><PropertyRef Name="COUNTRY"/><PropertyRef Name="IM_COUNTRY"/><PropertyRef Name="REGION"/></Key><Property Name="COUNTRY" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IM_COUNTRY" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IM_REGION" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Region" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="REGION" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Region" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TEXT" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Municipality name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_SHIPMENT_UF" sap:content-version="1">
+				<Key><PropertyRef Name="STATE"/></Key><Property Name="STATE" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Version Number Component"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Char" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_DIRF_CTRY" sap:content-version="1">
+				<Key><PropertyRef Name="COUNTRY"/></Key><Property Name="COUNTRY" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="COUNTRY" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="COUNTRY_DESCR" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="COUNTRY_DESCR"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_LIFE_ASSURANCE" sap:content-version="1">
+				<Key><PropertyRef Name="BAREA"/><PropertyRef Name="BPLAN"/><PropertyRef Name="BCOVR"/></Key><Property Name="IM_BPLAN" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Benefit plan"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BAREA" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Benefit area" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BPLAN" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Benefit plan" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BCOVR" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Insurance Option"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LTEXT" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Insur. option" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_OTHERS_BENEFITS" sap:content-version="1">
+				<Key><PropertyRef Name="BPLAN"/><PropertyRef Name="IM_PLTYP"/></Key><Property Name="BPLAN" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Benefit plan" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LTEXT" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Option" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IM_PLTYP" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Benefit Type"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_TRANSP_VOUCHER" sap:content-version="1">
+				<Key><PropertyRef Name="TRANS"/></Key><Property Name="TRANS" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Transport.code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TDESC" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Transp.descr." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_DEFICIENCY" sap:content-version="1">
+				<Key><PropertyRef Name="SBGRU"/></Key><Property Name="SBGRU" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Challenge group"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SBTXT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Challenge grp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_DEFICIENCY_TYPE" sap:content-version="1">
+				<Key><PropertyRef Name="SBART"/></Key><Property Name="SBART" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Challenge type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BTEXT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Challenge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_ESTABILITY" sap:content-version="1">
+				<Key><PropertyRef Name="SUBTY"/></Key><Property Name="SUBTY" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Task Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="STEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Task Type Text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_ABSENCE" sap:content-version="1">
+				<Key><PropertyRef Name="IM_TYPE"/><PropertyRef Name="IM_PROFILE"/><PropertyRef Name="MOABW"/><PropertyRef Name="AWART"/></Key><Property Name="IM_TYPE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="IM_TYPE" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="IM_PROFILE" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MOABW" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="PS grouping" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AWART" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Att./abs. type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ATEXT" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="A/A type text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_BANK" sap:content-version="1">
+				<Key><PropertyRef Name="BANKL"/><PropertyRef Name="BNKLZ"/><PropertyRef Name="BRNCH"/></Key><Property Name="BANKL" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Bank Key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BANKA" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Bank name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BNKLZ" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Bank number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BRNCH" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bank Branch" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_COMMUNICATION" sap:content-version="1">
+				<Key><PropertyRef Name="COMKY"/><PropertyRef Name="COMTY"/></Key><Property Name="COMKY" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="COMTY" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Category" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_SICK_NOTE" sap:content-version="1">
+				<Key><PropertyRef Name="MOABW"/><PropertyRef Name="AWART"/></Key><Property Name="MOABW" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="PS grouping" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AWART" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Att./abs. type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ATEXT" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="A/A type text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_UNION_MONTHLY" sap:content-version="1">
+				<Key><PropertyRef Name="EMFSL"/></Key><Property Name="EMFSL" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Payee key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EMFNA" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Payee name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PSTLZ" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Postal Code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ORT01" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="City" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BANKL" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Bank Key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_UNION_CONTRIB" sap:content-version="1">
+				<Key><PropertyRef Name="EMFSL"/></Key><Property Name="EMFSL" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Payee key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EMFNA" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Payee name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PSTLZ" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Postal Code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ORT01" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="City" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BANKL" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Bank Key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_REGISTRY" sap:content-version="1">
+				<Key><PropertyRef Name="PERNR"/></Key><Property Name="PERNR" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CNAME" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Full Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_UO" sap:content-version="1">
+				<Key><PropertyRef Name="ORGEH"/></Key><Property Name="ORGEH" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Org. Unit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ORGTX" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Org.Unit Short Text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IM_FULL" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false"
+					sap:label="Boolean Variable (X=True, -=False, Space=Unknown)" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_GHE" sap:content-version="1">
+				<Key><PropertyRef Name="GHE_CODE"/></Key><Property Name="GHE_CODE" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GHE_DESCR" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ET_SH_NP" sap:content-version="1">
+				<Key><PropertyRef Name="PERNR"/></Key><Property Name="PERNR" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CNAME" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_NP" sap:content-version="1">
+				<Key><PropertyRef Name="IM_PROFILE"/></Key><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_PLANS_RHD" sap:content-version="1">
+				<Key><PropertyRef Name="PLANS"/></Key><Property Name="PLANS" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PLSTX" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ORGEH" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ORGTX" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_STELL_RHD" sap:content-version="1">
+				<Key><PropertyRef Name="STELL"/></Key><Property Name="STELL" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="STEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_UG_RHD" sap:content-version="1">
+				<Key><PropertyRef Name="GROUPING"/></Key><Property Name="GROUPING" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GROUPINGDESCR" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_PERSK_RHD" sap:content-version="1">
+				<Key><PropertyRef Name="PERSK"/></Key><Property Name="PERSK" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PTEXT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_OPN_RHD" sap:content-version="1">
+				<Key><PropertyRef Name="GROUPING"/></Key><Property Name="GROUPING" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GROUPING_DESCR" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_FMC_RHD" sap:content-version="1">
+				<Key><PropertyRef Name="OBJID"/></Key><Property Name="OBJID" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="STEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_KOSTL_RHD" sap:content-version="1">
+				<Key><PropertyRef Name="KOSTL"/></Key><Property Name="KOSTL" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="LTEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_PERSG" sap:content-version="1">
+				<Key><PropertyRef Name="PERSG"/></Key><Property Name="PERSG" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PTEXT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_TRFGR_RHD" sap:content-version="1">
+				<Key><PropertyRef Name="TRFAR"/></Key><Property Name="TRFAR" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TRFARDESCR" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IM_PROFILE" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_EDUC_ESTABEL" sap:content-version="1">
+				<Key><PropertyRef Name="SLART"/></Key><Property Name="SLART" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Estabelecimento"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="STEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="c" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_EDUC_CURSO" sap:content-version="1">
+				<Key><PropertyRef Name="AUSBI"/></Key><Property Name="AUSBI" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Curso" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ATEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="c" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_EDUC_CERT" sap:content-version="1">
+				<Key><PropertyRef Name="IM_ESTAB"/><PropertyRef Name="SLABS"/></Key><Property Name="IM_ESTAB" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Estabelecimento "
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SLABS" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Certificação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="STEXT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="c" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_TRABALHO_ESTRAG" sap:content-version="1">
+				<Key><PropertyRef Name="TRABALHO"/></Key><Property Name="TRABALHO" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DESC_TRAB" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_ORGEH" sap:content-version="1">
+				<Key><PropertyRef Name="ORGEH"/></Key><Property Name="ORGEH" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Org. Unit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ORGTX" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Org.Unit Short Text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_BUK" sap:content-version="1">
+				<Key><PropertyRef Name="BUKRS"/></Key><Property Name="BUKRS" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="BUTXT" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="E_SH_T555R" sap:content-version="1">
+				<Key><PropertyRef Name="VME"/></Key><Property Name="VME" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TXT" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="A_PLANS" sap:content-version="1"><End Type="ZGLHR_SEARCH_HELP_SRV.E_SH_PLANS" Multiplicity="*" Role="FromRole_A_PLANS"/><End Type="ZGLHR_SEARCH_HELP_SRV.ACCOMMOD" Multiplicity="*" Role="ToRole_A_PLANS"/></Association>
+			<EntityContainer Name="ZGLHR_SEARCH_HELP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ET_SH_RETIREMENT" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_RETIREMENT" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_LIFE_ASSURANCE_PLAN" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_LIFE_ASSURANCE_PLAN" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_ACCOMMODATION" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_ACCOMMODATION" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_EDUC_FORM" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_EDUC_FORM" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_ARH" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_ARH" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_EMPLOYEE" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_EMPLOYEE" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_OTHERS_BENEFITS_OPT" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_OTHERS_BENEFITS_OPT" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_ACCOMMOD" EntityType="ZGLHR_SEARCH_HELP_SRV.ACCOMMOD" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:searchable="true" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_PLANS" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_PLANS" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_GET_NAME" EntityType="ZGLHR_SEARCH_HELP_SRV.E_GET_NAME" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_RACE" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_RACE" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_GHE_ARH" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_GHE_ARH" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_PERSK" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_PERSK" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_PERSA_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_PERSA_RDH" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_BTRTL_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_BTRTL_RHD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_ARFN_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_ARFN_RHD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_GHE_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_GHE_RHD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ImWerksSet" EntityType="ZGLHR_SEARCH_HELP_SRV.ImWerks" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_SARH" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_SARH" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_COUNTRY" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_COUNTRY" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_REGION" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_REGION" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_NATIONALITY" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_NATIONALITY" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_DEPENDENTS" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_DEPENDENTS" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_MARITAL_STATUS" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_MARITAL_STATUS" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_LOCAL_OF_BIRTH" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_LOCAL_OF_BIRTH" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_SHIPMENT_UF" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_SHIPMENT_UF" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_DIRF_CTRY" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_DIRF_CTRY" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_LIFE_ASSURANCE" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_LIFE_ASSURANCE" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_OTHERS_BENEFITS" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_OTHERS_BENEFITS" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_TRANSP_VOUCHER" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_TRANSP_VOUCHER" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_DEFICIENCY" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_DEFICIENCY" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_DEFICIENCY_TYPE" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_DEFICIENCY_TYPE" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_ESTABILITY" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_ESTABILITY" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_ABSENCE" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_ABSENCE" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_BANK" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_BANK" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_COMMUNICATION" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_COMMUNICATION" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_SICK_NOTE" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_SICK_NOTE" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_UNION_MONTHLY" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_UNION_MONTHLY" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_UNION_CONTRIB" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_UNION_CONTRIB" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_REGISTRY" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_REGISTRY" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_UO" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_UO" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_GHE" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_GHE" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ET_SH_NP" EntityType="ZGLHR_SEARCH_HELP_SRV.ET_SH_NP" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="E_SH_NP" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_NP" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_PLANS_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_PLANS_RHD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_STELL_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_STELL_RHD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_UG_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_UG_RHD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_PERSK_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_PERSK_RHD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_OPN_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_OPN_RHD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_FMC_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_FMC_RHD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_KOSTL_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_KOSTL_RHD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_PERSG" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_PERSG" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_TRFGR_RHD" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_TRFGR_RHD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_EDUC_ESTABEL" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_EDUC_ESTABEL" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_EDUC_CURSO" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_EDUC_CURSO" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_EDUC_CERT" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_EDUC_CERT" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_TRABALHO_ESTRAG" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_TRABALHO_ESTRAG" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ET_SH_ORGEH" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_ORGEH" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ET_SH_BUK" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_BUK" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="E_SH_T555RSet" EntityType="ZGLHR_SEARCH_HELP_SRV.E_SH_T555R" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<AssociationSet Name="AT_PLANS" Association="ZGLHR_SEARCH_HELP_SRV.A_PLANS" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="ET_SH_PLANS" Role="FromRole_A_PLANS"/><End EntitySet="ET_ACCOMMOD" Role="ToRole_A_PLANS"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZODHR_SS_SEARCH_HELP_SRV_01/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZODHR_SS_SEARCH_HELP_SRV_01/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

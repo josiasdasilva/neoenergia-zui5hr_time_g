@@ -1,0 +1,42 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="com.neo.ZODHR_SS_TIME_G.controller.SubsEscala">
+	<Dialog afterClose="onAfterCloseDialog" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="SubsEscala"
+		type="Standard" verticalScrolling="true" class="sapUiResponsiveContentPadding">
+		<content>
+			<VBox>
+				<HBox alignItems="Center">
+					<Label text="Matrícula:" design="Standard" width="115px" required="false" textAlign="Left" textDirection="Inherit" visible="true"
+						labelFor="Matricula"/>
+					<ComboBox id="matricula_3" items="{/ET_SH_PERNR}" placeholder="Selecionar Matrícula" width="350px" maxWidth="90%">
+						<items>
+							<core:Item key="{pernr}" text="{pernr} - {cname}"/>
+						</items>
+					</ComboBox>
+				</HBox>
+				<HBox alignItems="Center">
+					<Label text="Data:" design="Standard" width="115px" required="false" textAlign="Left" textDirection="Inherit" visible="true"/>
+					<DatePicker id="begda_3" valueFormat="dd.MM.yyyy" width="150px"/>
+					<Label text=" até: " design="Standard" width="50px" required="false" textAlign="Center" textDirection="Inherit" visible="true"/>
+					<DatePicker id="endda_3" valueFormat="dd.MM.yyyy" width="150px"/>
+				</HBox>
+				<HBox alignItems="Center">
+					<Label text="Escala:" design="Standard" width="115px" required="false" textAlign="Left" textDirection="Inherit" visible="true"/>
+					<ComboBox id="escala_3" selectionChange="onEscalaSelect" width="350px" 
+							  items="{ path: 'escala>/table', sorter: { path: 'text' } }"
+						class="sapUiSmallMarginBottom">
+						<core:Item key="{escala>key}" text="{escala>key} - {escala>desc}"/>
+					</ComboBox>
+				</HBox>
+			</VBox>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="Gravar" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="Cancelar" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

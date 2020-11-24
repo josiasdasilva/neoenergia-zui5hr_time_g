@@ -1,0 +1,466 @@
+<mvc:View controllerName="com.neo.ZODHR_SS_TIME_G.controller.TratamentoDoPonto" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:core="sap.ui.core">
+	<App>
+		<pages>
+			<Page showHeader="false" title="Tratamento do Ponto - Gestor" showFooter="true" showNavButton="false"
+				navButtonPress="_onPageNavButtonPress">
+				<content>
+					<IconTabBar select="_onTabBarFilterSelect" id="mainTabBar" expandable="false" expanded="true" applyContentPadding="true"
+						backgroundDesign="Solid" upperCase="false" visible="true" selectedKey="Ok">
+						<items>
+							<IconTabFilter key="Treatment" icon="sap-icon://appointment-2" iconColor="Default" text="Tratamento" count="" design="Vertical"
+								showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+								<content>
+									<fb:FilterBar id="FilterBar" clear="onClearAllFilter" showClearOnFB="true" reset="onReset" search="onSearch" showRestoreButton="true"
+										showClearButton="true" showFilterConfiguration="false">
+										<fb:filterItems>
+											<fb:FilterItem name="G" label="Unidade" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{unidadeData>/}">
+														<items>
+															<core:Item key="{unidadeData>}" text="{unidadeData>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="C" label="Unidade Organizacional" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{unidadeOrganizacionalData>/}">
+														<items>
+															<core:Item key="{unidadeOrganizacionalData>}" text="{unidadeOrganizacionalData>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="D" label="Centro de Custo" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{centroCustoData>/}">
+														<items>
+															<core:Item key="{centroCustoData>}" text="{centroCustoData>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="E" label="Grupo de Empregados" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{grupoDeEmpregadosData>/}">
+														<items>
+															<core:Item key="{grupoDeEmpregadosData>}" text="{grupoDeEmpregadosData>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<!--<fb:FilterItem name="F" label="Tipo de Equipe" labelTooltip="Tooltip Example" mandatory="false">-->
+											<!--	<fb:control>-->
+											<!--		<ComboBox items="{tipoDeEquipeData>/}">-->
+											<!--			<items>-->
+											<!--				<core:Item key="{tipoDeEquipeData>}" text="{tipoDeEquipeData>}"/>-->
+											<!--			</items>-->
+											<!--		</ComboBox>-->
+											<!--	</fb:control>-->
+											<!--</fb:FilterItem>-->
+											<fb:FilterItem name="A" label="Número Pessoal" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{numeroPessoalData>/}">
+														<items>
+															<core:Item key="{numeroPessoalData>}" text="{numeroPessoalData>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="B" label="Nome" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{nomeData>/}">
+														<items>
+															<core:Item key="{nomeData>}" text="{nomeData>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="H" label="Dia" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{DiaSemana>/}">
+														<items>
+															<core:Item key="{DiaSemana>}" text="{ path:'DiaSemana>' , formatter:'.onFormataAData'}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="I" label="Tipo de Ocorrência" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{TipoOcorrencia>/}">
+														<items>
+															<core:Item key="{TipoOcorrencia>}" text="{TipoOcorrencia>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+										</fb:filterItems>
+										<FlexBox alignItems="Start" justifyContent="Start" direction="Row" class="sapUiSmallMarginTop">
+											<items>
+												<Label text="Filtro por Período:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="false"
+													class="sapUiTinyMarginTop"/>
+												<DatePicker id="dtFiltro" change="onDateChange" valueFormat="MM.yyyy" displayFormat="MM.yyyy" placeholder="mm.aaaa" width="110px"
+													class="sapUiSmallMarginBeginEnd" visible="false"/>
+												<Button text="Buscar" type="Emphasized" press="onFiltrar" width="80px" class="sapUiSmallMarginEnd" visible="false"/>
+												<Label text="" id="txtPeriodo" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="false"
+													class="sapUiTinyMarginTop"/>
+											</items>
+										</FlexBox>
+									</fb:FilterBar>
+									<Table selectionChange="_onPointTreatmentTableSelectionChange" id="PointTreatmentTable" width="auto" noDataText="No data" mode="MultiSelect"
+										showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin"
+										items="{pointOcurrencyData>/}">
+										<infoToolbar>
+											<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+												<content>
+													<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</content>
+											</Toolbar>
+										</infoToolbar>
+										<headerToolbar/>
+										<columns>
+											<Column hAlign="Center" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="N. Pessoal" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="WithoutHeader" mergeDuplicates="false">
+												<header>
+													<Text text="Nome" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Block" mergeDuplicates="false">
+												<header>
+													<Text text="Data" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column hAlign="Center" vAlign="Top" minScreenWidth="Desktop" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Dia" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column hAlign="Center" vAlign="Top" minScreenWidth="Desktop" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Horário Teórico" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Marcações" width="auto" maxLines="1" wrapping="false" textAlign="Center" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+<!--											
+											<Column hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Ocorrência" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="false"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Apuração" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="false"/>
+												</header>
+												<footer/>
+											</Column>
+	-->										
+											<Column width="auto" hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Descrição" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem visible="{pointOcurrencyData>visible}" type="Inactive">
+												<cells>
+													<Text text="{pointOcurrencyData>PERNR}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<ObjectStatus text="{pointOcurrencyData>NOME}" state="None" visible="true"/>
+													<Text text="{pointOcurrencyData>DT_DISPLAY}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true"/>
+													<Text text="{pointOcurrencyData>DIA_SEM}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Text text="{pointOcurrencyData>HR_TEOR}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Text text="{pointOcurrencyData>MARCACOES}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true"/>
+<!--														
+													<ObjectStatus text="{pointOcurrencyData>OCORRENCIA}" state="Error" visible="false"/>
+													<Text text="{pointOcurrencyData>APUR}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="false"/>
+
+-->													<ObjectStatus text="{pointOcurrencyData>DESCR_OCOR}" state="Error" visible="true"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter key="BankHours" icon="sap-icon://create-entry-time" iconColor="Default" text="Banco Horas" count="" design="Vertical"
+								showAll="false" textDirection="Inherit" enabled="true" visible="false" iconDensityAware="false">
+								<content>
+									<fb:FilterBar id="FilterBarBH" clear="onClearAllFilter" showClearOnFB="true" reset="onReset" search="onSearchBH" showRestoreButton="true"
+										showClearButton="true" showFilterConfiguration="false">
+										<fb:filterItems>
+											<fb:FilterItem name="G" label="Unidade" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{unidadeDataBH>/}">
+														<items>
+															<core:Item key="{unidadeDataBH>}" text="{unidadeDataBH>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="C" label="Unidade Organizacional" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{unidadeOrganizacionalDataBH>/}">
+														<items>
+															<core:Item key="{unidadeOrganizacionalDataBH>}" text="{unidadeOrganizacionalDataBH>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="D" label="Centro de Custo" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{centroCustoDataBH>/}">
+														<items>
+															<core:Item key="{centroCustoDataBH>}" text="{centroCustoDataBH>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="E" label="Grupo de Empregados" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{grupoDeEmpregadosDataBH>/}">
+														<items>
+															<core:Item key="{grupoDeEmpregadosDataBH>}" text="{grupoDeEmpregadosDataBH>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="F" label="Tipo de Equipe" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{tipoDeEquipeDataBH>/}">
+														<items>
+															<core:Item key="{tipoDeEquipeDataBH>}" text="{tipoDeEquipeDataBH>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="A" label="Número Pessoal" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{numeroPessoalDataBH>/}">
+														<items>
+															<core:Item key="{numeroPessoalDataBH>}" text="{numeroPessoalDataBH>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="B" label="Nome" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{nomeDataBH>/}">
+														<items>
+															<core:Item key="{nomeDataBH>}" text="{nomeDataBH>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+										</fb:filterItems>
+									</fb:FilterBar>
+									<Table items="{hourBankData>/}" width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20"
+										growingScrollToLoad="true" class="sapUiResponsiveMargin">
+										<infoToolbar>
+											<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+												<content>
+													<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</content>
+											</Toolbar>
+										</infoToolbar>
+										<headerToolbar/>
+										<columns>
+											<Column width="auto" hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="N. Pessoal" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Nome" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Saldo BH Anterior" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Saldo BH {hourBankData>/0/DT_DISPLAY}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"
+														visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Saldo BH Acumulado" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem type="Active">
+												<cells>
+													<Text text="{hourBankData>PERNR}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<ObjectStatus text="{hourBankData>NOME}" state="None" visible="true"/>
+													<Text text="{hourBankData>SD_BH_ANT}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Link text="{hourBankData>SD_BH_MES}" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true" visible="true"
+														emphasized="false" subtle="false" press="_onBHLinkPress"/>
+													<Text text="{hourBankData>SD_BH_ACU}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter key="Timesheet" icon="sap-icon://timesheet" iconColor="Default" text="Horário" count="" design="Vertical" showAll="false"
+								textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+								<content>
+									<fb:FilterBar id="FilterBarHR" clear="onClearAllFilter" showClearOnFB="true" reset="onReset" search="onSearchHR" showRestoreButton="true"
+										showClearButton="true" showFilterConfiguration="false">
+										<fb:filterItems>
+											<fb:FilterItem name="G" label="Unidade" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{unidadeDataHR>/}">
+														<items>
+															<core:Item key="{unidadeDataHR>}" text="{unidadeDataHR>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="C" label="Unidade Organizacional" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{unidadeOrganizacionalDataHR>/}">
+														<items>
+															<core:Item key="{unidadeOrganizacionalDataHR>}" text="{unidadeOrganizacionalDataHR>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="D" label="Centro de Custo" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{centroCustoDataHR>/}">
+														<items>
+															<core:Item key="{centroCustoDataHR>}" text="{centroCustoDataHR>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="E" label="Grupo de Empregados" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{grupoDeEmpregadosDataHR>/}">
+														<items>
+															<core:Item key="{grupoDeEmpregadosDataHR>}" text="{grupoDeEmpregadosDataHR>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="F" label="Tipo de Equipe" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{tipoDeEquipeDataHR>/}">
+														<items>
+															<core:Item key="{tipoDeEquipeDataHR>}" text="{tipoDeEquipeDataHR>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="A" label="Número Pessoal" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{numeroPessoalDataHR>/}">
+														<items>
+															<core:Item key="{numeroPessoalDataHR>}" text="{numeroPessoalDataHR>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+											<fb:FilterItem name="B" label="Nome" labelTooltip="Tooltip Example" mandatory="false">
+												<fb:control>
+													<ComboBox items="{nomeDataHR>/}">
+														<items>
+															<core:Item key="{nomeDataHR>}" text="{nomeDataHR>}"/>
+														</items>
+													</ComboBox>
+												</fb:control>
+											</fb:FilterItem>
+										</fb:filterItems>
+									</fb:FilterBar>
+									<Table items="{timesheetData>/}" width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20"
+										growingScrollToLoad="true" class="sapUiResponsiveMargin">
+										<infoToolbar/>
+										<headerToolbar/>
+										<columns>
+											<Column width="70px" hAlign="Center" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="N. Pessoal" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="170px" hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="WithoutHeader"
+												mergeDuplicates="false">
+												<header>
+													<Text text="Nome" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem type="Navigation" press="_onTimesheetRowPress">
+												<cells>
+													<Text text="{timesheetData>PERNR}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Text text="{timesheetData>CNAME}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</content>
+							</IconTabFilter>
+						</items>
+						<content/>
+					</IconTabBar>
+				</content>
+				<footer>
+					<OverflowToolbar width="100%" height="auto" design="Auto" enabled="true" visible="true">
+						<content>
+							<ToolbarSpacer width=""/>
+							<Button id="shiftChange" text="Alteração de Plano de Horário" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true"
+								iconDensityAware="false" press="_onShiftChangeButtonPress"/>
+							<Button id="sobreAviso" text="Sobreaviso" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true"
+								iconDensityAware="false" press="_onSobreAvisoButtonPress"/>
+							<Button id="subsEscala" text="Subst.Horário" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true"
+								iconDensityAware="false" press="_onSubsEscalaButtonPress"/>
+							<Button id="overTime" text="Lançar Hrs.Extras" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true"
+								iconDensityAware="false" press="_onOverTimeButtonPress"/>
+							<Button id="bankHour" text="Lançar Hrs.Banco" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true"
+								iconDensityAware="false" press="_onBankHourButtonPress"/>
+							<Button id="justification" text="Justificar Ausencia" type="Emphasized" iconFirst="true" width="auto" enabled="false" visible="true"
+								iconDensityAware="false" press="_onJustificationButtonPress"/>
+							<Button id="editMarks" text="Inserir Marcações" type="Emphasized" iconFirst="true" width="auto" enabled="false" visible="true"
+								iconDensityAware="false" press="_onEditMarksButtonPress"/>
+							<Button id="excluirMarks" text="Excluir Marcação" type="Emphasized" iconFirst="true" width="auto" enabled="false" visible="true"
+								iconDensityAware="false" press="_onExcluirMarksButtonPress"/>
+						</content>
+					</OverflowToolbar>
+				</footer>
+				<headerContent/>
+				<subHeader/>
+				<customHeader/>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

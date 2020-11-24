@@ -1,0 +1,50 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="TrocarEscala.controller.Dialog11" xmlns="sap.m">
+	<Dialog afterClose="onAfterCloseDialog" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Troca de Horário"
+		type="Standard" verticalScrolling="true" class="sapUiResponsiveContentPadding">
+		<content>
+			<VBox>
+				<HBox alignItems="Center">
+					<Label text="Matrícula:" design="Standard" width="100px" required="true" textAlign="Center" textDirection="Inherit" visible="true"
+						labelFor="Matricula"/>
+					<ComboBox id="matricula_1" items="{/ET_SH_PERNR}" placeholder="Selecionar Matrícula" width="300px" maxWidth="90%" change="onChangeMatricula" required="true">
+						<items>
+							<core:Item key="{pernr}" text="{pernr} - {cname}"/>
+						</items>
+					</ComboBox>
+				</HBox>
+				<HBox alignItems="Center">
+					<Label text="Horário Atual:" design="Standard" width="100px" required="false" textAlign="Center" textDirection="Inherit" visible="true"
+						labelFor="hora"/>
+					<Input id="hora_1" width="250px" editable="false" enabled="true" visible="true"/>
+				</HBox>
+				<HBox alignItems="Center">
+					<Label text="Período:" design="Standard" width="100px" required="false" textAlign="Center" textDirection="Inherit" visible="true"/>
+					<DatePicker id="Periodo_1" change="_onInitialDateChange" width="auto" displayFormat="medium" enabled="false" visible="true"
+						valueFormat="dd.MM.yyyy" placeholder="ddmmaa(ex.: 010988)"/>
+				</HBox>
+				<HBox alignItems="Center">
+					<Label text="Novo Horário:" design="Standard" width="100px" required="true" textAlign="Center" textDirection="Inherit" visible="true"/>
+					<ComboBox id="novoHorario_1" width="300px" placeholder="Selecionar Horário...." editable="true" enabled="true" required="true"
+							  items="{ path: 'novohorario>/table', sorter: { path: 'text' } }"
+						class="sapUiSmallMarginBottom">
+						<core:Item key="{novohorario>key}" text="{novohorario>key} - {novohorario>desc}"/>
+					</ComboBox>
+					
+				</HBox>
+			</VBox>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="Gravar" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="Cancelar" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+			<Button text="PHTD" type="Default" icon="sap-icon://form" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPHTP"/>
+
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

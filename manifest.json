@@ -1,0 +1,186 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"id": "com.neo.ZODHR_SS_TIME_G",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZODHR_SS_TREATED_M_SRV": {
+				"uri": "/sap/opu/odata/sap/ZODHR_SS_TREATED_M_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZODHR_SS_TREATED_TM_SRV": {
+				"uri": "/sap/opu/odata/sap/ZODHR_SS_TREATED_TM_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZODHR_SS_TREATED_TM_SRV/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.neo.ZODHR_SS_TIME_G.view.TratamentoDoPonto",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.collaboration": {},
+				"sap.m": {},
+				"sap.ui.comp": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.neo.ZODHR_SS_TIME_G.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZODHR_SS_TREATED_TM_SRV",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.neo.ZODHR_SS_TIME_G.view",
+				"controlId": "App",
+				"clearTarget": false,
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": [
+						"TratamentoDoPonto"
+					]
+				}
+			},
+			"targets": {
+				"TratamentoDoPonto": {
+					"controlAggregation": "pages",
+					"viewName": "TratamentoDoPonto",
+					"viewId": "TratamentoDoPonto",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"Infotipos": {
+					"controlAggregation": "pages",
+					"viewName": "Infotipos",
+					"viewId": "Infotipos",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"PlanoHorario": {
+					"controlAggregation": "pages",
+					"viewName": "PlanoHorario",
+					"viewId": "PlanoHorario",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"EditarMarcacao": {
+					"controlAggregation": "pages",
+					"viewName": "EditarMarcacao",
+					"viewId": "EditarMarcacao",
+					"viewLevel": 2,
+					"transition": "slide"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "TratamentoDoPonto/:context:",
+					"name": "TratamentoDoPonto",
+					"target": [
+						"TratamentoDoPonto"
+					]
+				},
+				{
+					"pattern": "",
+					"name": "default",
+					"target": [
+						"TratamentoDoPonto"
+					]
+				},
+				{
+					"pattern": "Infotipos/:context:",
+					"name": "Infotipos",
+					"target": [
+						"Infotipos"
+					]
+				},
+				{
+					"pattern": "PlanoHorario/{contextpath}",
+					"name": "PlanoHorario",
+					"target": [
+						"PlanoHorario"
+					]
+				},
+				{
+					"pattern": "EditarMarcacao/:context:",
+					"name": "EditarMarcacao",
+					"target": [
+						"EditarMarcacao"
+					]
+				}
+			]
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zui5hr_time_g",
+		"_version": "1.1.0"
+	}
+}

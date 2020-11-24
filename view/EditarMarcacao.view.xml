@@ -1,0 +1,199 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.neo.ZODHR_SS_TIME_G.controller.EditarMarcacao" xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Page showHeader="true" title="Excluir Marcações" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+        <content>
+            <Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+                <infoToolbar>
+                    <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                        <content>
+                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </content>
+                    </Toolbar>
+                </infoToolbar>
+                <headerToolbar>
+                    <OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+                        <content>
+                            <Title text="Joyce da Silva Santos" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+                            <ToolbarSpacer width=""/>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column width="70px" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Data" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="80px" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Marcação" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="40px" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Dia Ant." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="120px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Motivo" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="80px" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Marcação" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="40px" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Dia Ant." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="120px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Motivo" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="80px" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Marcação" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="40px" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Dia Ant." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="120px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Motivo" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="80px" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Marcação" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="50px" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Dia Ant." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                    <Column width="100px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <header>
+                            <Text text="Motivo" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </header>
+                        <footer/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active">
+                        <cells>
+                            <Text text="03.09.2018" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                            <Input value="08:04" type="Text" showValueHelp="false" enabled="true" visible="true" width="85px" valueHelpOnly="false" maxLength="0"/>
+                            <CheckBox text="" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit" wrapping="false" useEntireWidth="true"/>
+                            <ComboBox editable="true" enabled="true" visible="true" width="90px" valueState="None" maxWidth="100%">
+                                <items>
+                                    <core:Item text="Esquecimento de Marcação" enabled="true" key="Esquecimento de Marcação"/>
+                                    <core:Item text="Relógio com defeito" enabled="true" key="Relógio com defeito"/>
+                                    <core:Item text="Alinhamento de Marcação" enabled="true" key="Alinhamento de Marcação"/>
+                                </items>
+                            </ComboBox>
+                            <Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="85px" valueHelpOnly="false" maxLength="0"/>
+                            <CheckBox text="" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit" wrapping="false" useEntireWidth="true"/>
+                            <ComboBox editable="true" enabled="true" visible="true" width="90px" valueState="None" maxWidth="100%">
+                                <items>
+                                    <core:Item text="Esquecimento de Marcação" enabled="true" key="Esquecimento de Marcação"/>
+                                    <core:Item text="Relógio com defeito" enabled="true" key="Relógio com defeito"/>
+                                    <core:Item text="Alinhamento de Marcação" enabled="true" key="Alinhamento de Marcação"/>
+                                </items>
+                            </ComboBox>
+                            <Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="85px" valueHelpOnly="false" maxLength="0"/>
+                            <CheckBox text="" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit" wrapping="false" useEntireWidth="true"/>
+                            <ComboBox editable="true" enabled="true" visible="true" width="90px" valueState="None" maxWidth="100%">
+                                <items>
+                                    <core:Item text="Esquecimento de Marcação" enabled="true" key="Esquecimento de Marcação"/>
+                                    <core:Item text="Relógio com defeito" enabled="true" key="Relógio com defeito"/>
+                                    <core:Item text="Alinhamento de Marcação" enabled="true" key="Alinhamento de Marcação"/>
+                                </items>
+                            </ComboBox>
+                            <Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="85px" valueHelpOnly="false" maxLength="0"/>
+                            <CheckBox text="" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit" wrapping="false" useEntireWidth="true"/>
+                            <ComboBox editable="true" enabled="true" visible="true" width="90px" valueState="None" maxWidth="100%">
+                                <items>
+                                    <core:Item text="Esquecimento de Marcação" enabled="true" key="Esquecimento de Marcação"/>
+                                    <core:Item text="Relógio com defeito" enabled="true" key="Relógio com defeito"/>
+                                    <core:Item text="Alinhamento de Marcação" enabled="true" key="Alinhamento de Marcação"/>
+                                </items>
+                            </ComboBox>
+                        </cells>
+                    </ColumnListItem>
+                    <ColumnListItem type="Active">
+                        <cells>
+                            <Text text="04.09.2018" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                            <Input value="00:42" type="Text" showValueHelp="false" enabled="true" visible="true" width="85px" valueHelpOnly="false" maxLength="0"/>
+                            <CheckBox text="" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit" wrapping="false" useEntireWidth="true"/>
+                            <ComboBox editable="true" enabled="true" visible="true" width="90px" valueState="None" maxWidth="100%">
+                                <items>
+                                    <core:Item text="Esquecimento de Marcação" enabled="true" key="Esquecimento de Marcação"/>
+                                    <core:Item text="Relógio com defeito" enabled="true" key="Relógio com defeito"/>
+                                    <core:Item text="Alinhamento de Marcação" enabled="true" key="Alinhamento de Marcação"/>
+                                </items>
+                            </ComboBox>
+                            <Input value="12:00" type="Text" showValueHelp="false" enabled="true" visible="true" width="85px" valueHelpOnly="false" maxLength="0"/>
+                            <CheckBox text="" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit" wrapping="false" useEntireWidth="true"/>
+                            <ComboBox editable="true" enabled="true" visible="true" width="90px" valueState="None" maxWidth="100%">
+                                <items>
+                                    <core:Item text="Esquecimento de Marcação" enabled="true" key="Esquecimento de Marcação"/>
+                                    <core:Item text="Relógio com defeito" enabled="true" key="Relógio com defeito"/>
+                                    <core:Item text="Alinhamento de Marcação" enabled="true" key="Alinhamento de Marcação"/>
+                                </items>
+                            </ComboBox>
+                            <Input value="19:00" type="Text" showValueHelp="false" enabled="true" visible="true" width="85px" valueHelpOnly="false" maxLength="0"/>
+                            <CheckBox text="" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit" wrapping="false" useEntireWidth="true"/>
+                            <ComboBox editable="true" enabled="true" visible="true" width="90px" valueState="None" maxWidth="100%">
+                                <items>
+                                    <core:Item text="Esquecimento de Marcação" enabled="true" key="Esquecimento de Marcação"/>
+                                    <core:Item text="Relógio com defeito" enabled="true" key="Relógio com defeito"/>
+                                    <core:Item text="Alinhamento de Marcação" enabled="true" key="Alinhamento de Marcação"/>
+                                </items>
+                            </ComboBox>
+                            <Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="85px" valueHelpOnly="false" maxLength="0"/>
+                            <CheckBox text="" selected="false" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit" wrapping="false" useEntireWidth="true"/>
+                            <ComboBox editable="true" enabled="true" visible="true" width="90px" valueState="None" maxWidth="100%">
+                                <items>
+                                    <core:Item text="Esquecimento de Marcação" enabled="true" key="Esquecimento de Marcação"/>
+                                    <core:Item text="Relógio com defeito" enabled="true" key="Relógio com defeito"/>
+                                    <core:Item text="Alinhamento de Marcação" enabled="true" key="Alinhamento de Marcação"/>
+                                </items>
+                            </ComboBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="auto" design="Auto" enabled="true" visible="true">
+                <content>
+                    <ToolbarSpacer width=""/>
+                    <Button text="Salvar" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                    <Button text="Cancelar" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

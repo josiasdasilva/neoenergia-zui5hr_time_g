@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.neo.ZODHR_SS_TIME_G.controller.HolidayChangeDialog" xmlns="sap.m">
+    <Dialog contentWidth="200px" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Troca de Feriado" type="Standard" verticalScrolling="true">
+        <content>
+          <VBox>
+            <HBox>
+          <Text text="Data da Troca" width="135px" maxLines="1" wrapping="false" textAlign="Center" textDirection="Inherit" visible="true"/>
+                <DatePicker change="_onInitialDateChange" width="auto" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
+            </HBox>
+            <HBox>
+              <Text text="Data do Feriado" width="135px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                <DatePicker change="_onFinalDateChange" width="auto" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
+            </HBox>
+          </VBox>
+            
+        </content>
+        <beginButton/>
+        <buttons>
+            <Button text="Gravar" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+            <Button text="Cancelar" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

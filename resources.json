@@ -1,0 +1,199 @@
+{
+    "resources": [
+        {
+            "name": ".che/project.json"
+        },
+        {
+            "name": ".gitignore"
+        },
+        {
+            "name": "Component-dbg-2.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "Gruntfile.js"
+        },
+        {
+            "name": "controller/BHPopover.js"
+        },
+        {
+            "name": "controller/Dialog4.js"
+        },
+        {
+            "name": "controller/Dialog5.js"
+        },
+        {
+            "name": "controller/Dialog6.js"
+        },
+        {
+            "name": "controller/EditarMarcacao.controller.js"
+        },
+        {
+            "name": "controller/ExcluirMarcacoes.js"
+        },
+        {
+            "name": "controller/HolidayChangeDialog.js"
+        },
+        {
+            "name": "controller/Infotipos-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Infotipos.controller.js"
+        },
+        {
+            "name": "controller/JustificationDialog.js"
+        },
+        {
+            "name": "controller/PlanoHorario.controller.js"
+        },
+        {
+            "name": "controller/ShiftChangeDialog.js"
+        },
+        {
+            "name": "controller/SobreAviso.js"
+        },
+        {
+            "name": "controller/StandardTimeDialog.js"
+        },
+        {
+            "name": "controller/SubsEscala.js"
+        },
+        {
+            "name": "controller/TelaEditarMarcacoes.js"
+        },
+        {
+            "name": "controller/TratamentoDoPonto.controller.js"
+        },
+        {
+            "name": "controller/utilities-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/utilities.js"
+        },
+        {
+            "name": "css/style-dbg.css",
+            "isDebug": true
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "dist"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "localService/ZODHR_SS_SEARCH_HELP_SRV_01/metadata.xml"
+        },
+        {
+            "name": "localService/ZODHR_SS_TREATED_TM_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "node_modules"
+        },
+        {
+            "name": "package-lock.json"
+        },
+        {
+            "name": "package.json"
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "sap-ui-cachebuster-info.json"
+        },
+        {
+            "name": "serviceBinding.js"
+        },
+        {
+            "name": "view/BHPopover.fragment.xml"
+        },
+        {
+            "name": "view/Dialog11.fragment.xml"
+        },
+        {
+            "name": "view/Dialog4.fragment.xml"
+        },
+        {
+            "name": "view/Dialog5.fragment.xml"
+        },
+        {
+            "name": "view/Dialog6.fragment.xml"
+        },
+        {
+            "name": "view/EditarMarcacao.view.xml"
+        },
+        {
+            "name": "view/ExcluirMarcacoes.fragment.xml"
+        },
+        {
+            "name": "view/HolidayChangeDialog.fragment.xml"
+        },
+        {
+            "name": "view/Infotipos.view.xml"
+        },
+        {
+            "name": "view/JustificationDialog.fragment.xml"
+        },
+        {
+            "name": "view/PlanoHorario.view.xml"
+        },
+        {
+            "name": "view/ShiftChangeDialog.fragment.xml"
+        },
+        {
+            "name": "view/SobreAviso.fragment.xml"
+        },
+        {
+            "name": "view/StandardTimeDialog.fragment.xml"
+        },
+        {
+            "name": "view/SubsEscala.fragment.xml"
+        },
+        {
+            "name": "view/TelaEditarMarcacoes.fragment.xml"
+        },
+        {
+            "name": "view/TratamentoDoPonto.view.xml"
+        },
+        {
+            "name": "webServices/connections-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "webServices/connections.js"
+        }
+    ]
+}

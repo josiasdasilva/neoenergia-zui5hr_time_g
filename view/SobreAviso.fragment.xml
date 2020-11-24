@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="com.neo.ZODHR_SS_TIME_G.controller.SobreAviso">
+	<Dialog afterClose="onAfterCloseDialog" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Sobreaviso"
+		type="Standard" verticalScrolling="true" class="sapUiResponsiveContentPadding">
+		<content>
+			<VBox>
+				<HBox alignItems="Center">
+					<Label text="Matrícula:" design="Standard" width="115px" required="false" textAlign="Left" textDirection="Inherit" visible="true"
+						labelFor="Matricula"/>
+					<ComboBox id="matricula_2" items="{/ET_SH_PERNR}" placeholder="Selecionar Matrícula" width="300px" maxWidth="90%">
+						<items>
+							<core:Item key="{pernr}" text="{pernr} - {cname}"/>
+						</items>
+					</ComboBox>
+				</HBox>
+				<HBox alignItems="Center">
+					<Label text="Data:" design="Standard" width="115px" required="false" textAlign="Left" textDirection="Inherit" visible="true"/>
+					<DatePicker id="begda_2" valueFormat="dd.MM.yyyy" width="150px"/>
+					<Label text=" até: " design="Standard" width="50px" required="false" textAlign="Center" textDirection="Inherit" visible="true"/>
+					<DatePicker id="endda_2" valueFormat="dd.MM.yyyy" width="150px"/>
+				</HBox>
+				<HBox alignItems="Center">
+					<Label text="Plantão:" design="Standard" width="115px" required="false" textAlign="Left" textDirection="Inherit" visible="true"/>
+					<Input id="plantao_2" width="100px" enabled="false" visible="true" editable="false"/>
+					<Label text="Sobreaviso" design="Standard" width="115px" required="false" textAlign="Right" textDirection="Inherit" visible="true"/>
+				</HBox>
+				<HBox alignItems="Center">
+					<Label text="Horas:" design="Standard" width="115px" required="true" textAlign="Left" textDirection="Inherit" visible="true"/>
+					<TimePicker id="beghour_2" valueFormat="HH:mm" width="110px" displayFormat="HH:mm" placeholder="Hora Início" required="true"/>
+					<Label text="até" design="Standard" width="50px" required="false" textAlign="Center" textDirection="Inherit" visible="true"/>
+					<TimePicker id="endhour_2" valueFormat="HH:mm" width="110px" displayFormat="HH:mm" placeholder="Hora Fim"/>
+				</HBox>
+			</VBox>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="Gravar" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="Cancelar" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>
