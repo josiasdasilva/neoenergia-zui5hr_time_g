@@ -102,7 +102,7 @@ sap.ui.define([
 				mesF = (mes.length == 1) ? "0" + mes : mes,
 				anoF = data.getFullYear();
 
-			if (mesF === 13) {
+			if (mesF === "13") {
 				mesF = "01";
 				anoF++;
 			}
