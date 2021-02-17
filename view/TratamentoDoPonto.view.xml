@@ -95,9 +95,7 @@
 														</items>
 													</ComboBox>
 												</fb:control>
-											</fb:FilterItem>
-
-											
+											</fb:FilterItem>											
 										</fb:filterItems>
 										<FlexBox alignItems="Start" justifyContent="Start" direction="Row" class="sapUiSmallMarginTop">
 											<items>
