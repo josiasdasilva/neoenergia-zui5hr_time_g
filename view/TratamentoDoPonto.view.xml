@@ -96,6 +96,8 @@
 													</ComboBox>
 												</fb:control>
 											</fb:FilterItem>
+
+											
 										</fb:filterItems>
 										<FlexBox alignItems="Start" justifyContent="Start" direction="Row" class="sapUiSmallMarginTop">
 											<items>
@@ -157,6 +159,13 @@
 												</header>
 												<footer/>
 											</Column>
+
+											<Column hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Ausência" width="auto" maxLines="1" wrapping="false" textAlign="Center" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
 <!--											
 											<Column hAlign="Center" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 												<header>
@@ -187,8 +196,8 @@
 														visible="true"/>
 													<Text text="{pointOcurrencyData>DIA_SEM}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 													<Text text="{pointOcurrencyData>HR_TEOR}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
-													<Text text="{pointOcurrencyData>MARCACOES}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit"
-														visible="true"/>
+													<Text text="{pointOcurrencyData>MARCACOES}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Text text="{pointOcurrencyData>AUSENCIA}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 <!--														
 													<ObjectStatus text="{pointOcurrencyData>OCORRENCIA}" state="Error" visible="false"/>
 													<Text text="{pointOcurrencyData>APUR}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="false"/>
