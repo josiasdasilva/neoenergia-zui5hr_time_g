@@ -187,7 +187,7 @@
 										</columns>
 										<items>
 											<ColumnListItem visible="{pointOcurrencyData>visible}" type="Inactive" id="tableCells">
-												<cells>
+												<cells templateShareable="false">
 													<Text text="{pointOcurrencyData>PERNR}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 													<ObjectStatus text="{pointOcurrencyData>NOME}" state="None" visible="true"/>
 													<Text text="{pointOcurrencyData>DT_DISPLAY}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit"
@@ -195,7 +195,7 @@
 													<Text text="{pointOcurrencyData>DIA_SEM}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 													<Text text="{pointOcurrencyData>HR_TEOR}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 													<FlexBox alignItems="Center" justifyContent="Center" id="boxMarcacoes">
-														<ObjectStatus text="{pointOcurrencyData>MARCACOES}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" active="true" inverted="true" state="Success"/>
+														<!-- <ObjectStatus text="{pointOcurrencyData>MARCACOES}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" active="true" inverted="true" state="Success"/> -->
 													</FlexBox>
 													<Text text="{pointOcurrencyData>AUSENCIA}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 <!--														
