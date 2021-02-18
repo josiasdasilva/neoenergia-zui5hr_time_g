@@ -194,7 +194,7 @@
 														visible="true"/>
 													<Text text="{pointOcurrencyData>DIA_SEM}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 													<Text text="{pointOcurrencyData>HR_TEOR}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
-													<Text text="{pointOcurrencyData>MARCACOES}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<ObjectStatus text="{pointOcurrencyData>MARCACOES}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" active="true" inverted="true" state="Success"/>
 													<Text text="{pointOcurrencyData>AUSENCIA}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 <!--														
 													<ObjectStatus text="{pointOcurrencyData>OCORRENCIA}" state="Error" visible="false"/>

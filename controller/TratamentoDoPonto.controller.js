@@ -1083,10 +1083,17 @@ sap.ui.define([
 
 			this._onPointTreatmentTableSelectionChange();
 		},
+		//aqui
 		organizeDisplayData: function organizeDisplayData(oData) {
 			var displayData = [];
-
 			for (var i = 0; i < oData.length; i++) {
+				if(oData[i].MARCACOES){
+					let aux = oData[i].MARCACOES.split("-");
+					for(let j = 0; j < aux.length/2; j++){
+						//logica para criar o componente de acordo com a regra
+						// R = vermelho e M = verde
+					}
+				}
 				if (oData[i].visible) {
 					displayData.push(oData[i]);
 				}
