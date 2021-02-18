@@ -1081,6 +1081,8 @@ sap.ui.define([
 			json.setData(displayData);
 			this.getView().setModel(json, "pointOcurrencyData");
 
+			const table = this.getView().byId('PointTreatmentTable');
+			const items = table.getItems();
 			this._onPointTreatmentTableSelectionChange();
 		},
 		//aqui
