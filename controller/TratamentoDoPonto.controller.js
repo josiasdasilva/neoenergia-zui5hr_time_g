@@ -1088,12 +1088,22 @@ sap.ui.define([
 			var displayData = [];
 			for (var i = 0; i < oData.length; i++) {
 				if(oData[i].MARCACOES){
-					let aux = oData[i].MARCACOES.split("-");
-					for(let j = 0; j < aux.length/2; j++){
-						//logica para criar o componente de acordo com a regra
-						// R = vermelho e M = verde
+					//let aux = oData[i].MARCACOES.split("-");
+					let aux = ["00:00","15:32","R","M"]
+					let tam = aux.length/2
+					//criar componente vazio com o tamanho tam
+
+					//adiciona o conteudo do componente aqui dentro seguindo a logica  R = vermelho e M = verde
+					for(let j = 0; j < tam; j++){
+						if(aux[tam+j] == 'M'){
+							//aux[j].setState("Error");
+
+						}else{
+							//aux[j].setState("Sucess");
+						}
 					}
 				}
+				//seta todas modificacoes no display 
 				if (oData[i].visible) {
 					displayData.push(oData[i]);
 				}
