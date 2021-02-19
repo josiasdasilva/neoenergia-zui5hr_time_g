@@ -1122,9 +1122,9 @@ sap.ui.define([
                   const myObjectStatus = new ObjectStatus();
                   myObjectStatus.setText(marcacoes[j]);
                   if(marcacoes[tam+j] == 'M'){
-                    myObjectStatus.setState(sap.ui.core.ValueState.Success);
-                  }else{
                     myObjectStatus.setState(sap.ui.core.ValueState.Error);
+                  }else{
+                    myObjectStatus.setState(sap.ui.core.ValueState.Success);
                   }
                   if(oData[i].objetosMarcacoes.length) oData[i].objetosMarcacoes.push(separator);
                   oData[i].objetosMarcacoes.push(myObjectStatus);
