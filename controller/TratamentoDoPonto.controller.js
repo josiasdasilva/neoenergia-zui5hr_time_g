@@ -1083,6 +1083,9 @@ sap.ui.define([
             json.setData(displayData);
             this.getView().setModel(json, "pointOcurrencyData");
             
+
+
+			// 1089 - 1105 pode virar uma funcao
             const table = this.getView().byId('PointTreatmentTable');
             const items = table.getItems();
             for(let i=0; i < displayData.length; i++){
@@ -1111,7 +1114,6 @@ sap.ui.define([
                 //metade do array de marcações são marcações,
                 // o restante são as classificações de cada marcação
                 let marcacoes = oData[i].MARCACOES.split("-");
-                //let marcacoes = ["00:00","15:32","17:00","M","R","M"];
                 let tam = marcacoes.length/2;
                 //criar array de components ObjectStatus e anexar ao model
                 oData[i].objetosMarcacoes = new Array;
@@ -1122,7 +1124,7 @@ sap.ui.define([
                   const myObjectStatus = new ObjectStatus();
                   myObjectStatus.setText(marcacoes[j]);
                   if(marcacoes[tam+j] == 'M'){
-                    myObjectStatus.setState(sap.ui.core.ValueState.Error);
+                    myObjectStatus.setState(sap.ui.core.ValueState.Error);	
                   }else{
                     myObjectStatus.setState(sap.ui.core.ValueState.Success);
                   }
