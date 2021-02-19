@@ -1115,7 +1115,7 @@ sap.ui.define([
                 let tam = marcacoes.length/2;
                 //criar array de components ObjectStatus e anexar ao model
                 oData[i].objetosMarcacoes = new Array;
-                //adiciona o conteudo do componente aqui dentro seguindo a logica  R = vermelho e M = verde
+                //adiciona o conteudo do componente aqui dentro seguindo a logica  R = verde e M = vermelho
                 for(let j = 0; j < tam; j++){
                   const separator = new Text();
                   separator.setText("-");
