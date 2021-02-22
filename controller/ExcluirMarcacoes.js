@@ -43,10 +43,32 @@ sap.ui.define(["sap/ui/base/ManagedObject", "sap/m/MessageBox", "./utilities", "
 						oData.results[i].INDEX = i;
 						oData.results[i].VISIBLE = oData.results[i].DATUM === this.data;
 						oData.results[i].newStructure = [];
-						oData.results[i].DATA_DISPLAY = oData.results[i].DATUM.substring(6, 8) + "/" +
-							oData.results[i].DATUM.substring(4, 6) + "/" +
+						oData.results[i].DATA_DISPLAY = oData.results[i].DATUM.substring(6, 8) + "/" + oData.results[i].DATUM.substring(4, 6) + "/" +
 							oData.results[i].DATUM.substring(0, 4);
 						var enabled = false;
+
+						//aqui
+						var table = sap.ui.getCore().getModel("TratamentoPonto")
+						for(let j = 0; j < table.length; j++){
+							item = table[j];
+							if(item.DT_OCOR == oData.results[i].DATUM){
+								break;
+							}
+						}
+						const arr = [];
+						if(item.DT_OCOR == oData.results[i].DATUM){
+							for(let z = 0; z < item.objetosMarcacoes.length; z++){
+								if(item.objetosMarcacoes[z].mProperties.state){
+									if(item.objetosMarcacoes[z].mProperties.state == "Error"){
+										arr.push(true);
+									}
+									else{
+										arr.push(false);
+									}
+								}
+							}
+						}
+						//
 						// Estrutura para montar os dados de marca��o
 
 						for (var indx = 0; indx < 4; indx++) {
@@ -61,7 +83,11 @@ sap.ui.define(["sap/ui/base/ManagedObject", "sap/m/MessageBox", "./utilities", "
 							} else {
 								enabled = false;
 							}
-
+							//aqui
+							if(arr.length > indx){
+								if(enabled)	enabled = arr[indx]
+							}
+							//
 							oData.results[i].newStructure.push({
 								hora: sHora,
 								diaAnt: oData.results[i]["VTKNEN_0" + (indx + 1)] === "X" ? true : false,

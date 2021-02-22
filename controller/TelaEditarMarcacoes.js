@@ -57,9 +57,9 @@ sap.ui.define(["sap/ui/base/ManagedObject", "sap/m/MessageBox", "./utilities", "
 						}
 						const arr = [];
 						if(item.DT_OCOR == oData.results[i].DATUM){
-							for(let i = 0; i < item.objetosMarcacoes.length; i++){
-								if(item.objetosMarcacoes[i].mProperties.state){
-									if(item.objetosMarcacoes[i].mProperties.state == "Error"){
+							for(let z = 0; z < item.objetosMarcacoes.length; z++){
+								if(item.objetosMarcacoes[z].mProperties.state){
+									if(item.objetosMarcacoes[z].mProperties.state == "Error"){
 										arr.push(true);
 									}
 									else{
@@ -67,8 +67,8 @@ sap.ui.define(["sap/ui/base/ManagedObject", "sap/m/MessageBox", "./utilities", "
 									}
 								}
 							}
-						
 						}
+						//
 						// Estrutura para montar os dados de marca��o
 
 						for (var indx = 0; indx < 4; indx++) {
@@ -83,11 +83,11 @@ sap.ui.define(["sap/ui/base/ManagedObject", "sap/m/MessageBox", "./utilities", "
 							} else {
 								enabled = false;
 							}
-
+							//aqui
 							if(arr.length > indx){
 								if(enabled)	enabled = arr[indx]
 							}
-
+							//
 							oData.results[i].newStructure.push({
 								hora: sHora,
 								diaAnt: oData.results[i]["VTKNEN_0" + (indx + 1)] === "X" ? true : false,

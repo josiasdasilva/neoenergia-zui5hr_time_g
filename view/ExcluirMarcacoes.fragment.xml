@@ -14,7 +14,7 @@
 					<tb:Column width="5rem" hAlign="Center">
 						<Label text="Mar.Exclusão"/>
 						<tb:template>
-							<CheckBox selected="{marksData>diaAnt}"/>
+							<CheckBox selected="{marksData>diaAnt}" enabled="{marksData>enabledField}"/>
 						</tb:template>
 					</tb:Column>
 					<tb:Column width="6rem">
@@ -30,7 +30,7 @@
 					<tb:Column width="auto">
 						<Label text="Motivo"/>
 						<tb:template>
-							<ComboBox items="{markEditReasonData>/}" selectedKey="{marksData>motivo}" editable="true" enabled="true" visible="true" width="auto"
+							<ComboBox items="{markEditReasonData>/}" selectedKey="{marksData>motivo}" editable="true" enabled="{marksData>enabledField}" visible="true" width="auto"
 								valueState="None" maxWidth="100%">
 								<items>
 									<core:Item text="{markEditReasonData>GTEXT}" enabled="true" key="{markEditReasonData>ABWGR}"/>
@@ -46,7 +46,7 @@
 					<tb:Column width="5rem" hAlign="Center">
 						<Label text="Mar.Exclusão"/>
 						<tb:template>
-							<CheckBox selected="{marksData>diaAnt}"/>
+							<CheckBox selected="{marksData>diaAnt}" enabled="{marksData>enabledField}"/>
 						</tb:template>
 					</tb:Column>
 					<tb:Column width="6rem">
@@ -62,7 +62,7 @@
 					<tb:Column width="auto">
 						<Label text="Motivo"/>
 						<tb:template>
-							<ComboBox items="{markEditReasonData>/}" selectedKey="{marksData>motivo}" editable="true" enabled="true" visible="true" width="auto"
+							<ComboBox items="{markEditReasonData>/}" selectedKey="{marksData>motivo}" editable="true" enabled="{marksData>enabledField}" visible="true" width="auto"
 								valueState="None" maxWidth="100%">
 								<items>
 									<core:Item text="{markEditReasonData>GTEXT}" enabled="true" key="{markEditReasonData>ABWGR}"/>
@@ -78,7 +78,7 @@
 					<tb:Column width="5rem" hAlign="Center">
 						<Label text="Mar.Exclusão"/>
 						<tb:template>
-							<CheckBox selected="{marksData>diaAnt}"/>
+							<CheckBox selected="{marksData>diaAnt}" enabled="{marksData>enabledField}"/>
 						</tb:template>
 					</tb:Column>
 					<tb:Column width="6rem">
@@ -94,7 +94,7 @@
 					<tb:Column width="auto">
 						<Label text="Motivo"/>
 						<tb:template>
-							<ComboBox items="{markEditReasonData>/}" selectedKey="{marksData>motivo}" editable="true" enabled="true" visible="true" width="auto"
+							<ComboBox items="{markEditReasonData>/}" selectedKey="{marksData>motivo}" editable="true" enabled="{marksData>enabledField}" visible="true" width="auto"
 								valueState="None" maxWidth="100%">
 								<items>
 									<core:Item text="{markEditReasonData>GTEXT}" enabled="true" key="{markEditReasonData>ABWGR}"/>
