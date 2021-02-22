@@ -23,19 +23,6 @@ sap.ui.define(["sap/ui/base/ManagedObject", "sap/m/MessageBox", "./utilities", "
 			},
 			getMarksData: function getMarksData() {
 				var item = sap.ui.getCore().getModel("TratamentoPonto").getSelectedPointTreatmentItems()[0];
-
-				//aqui
-				var view = this.getView().byId("marksList1");
-				for(let i = 0; i < item.objetosMarcacoes.length; i++){
-					if(item.objetosMarcacoes[i].mProperties.state){
-						if(item.objetosMarcacoes[i].mProperties.state == "Error"){
-							let v1 = view.mAggregations.columns[0]//pegarlinha[i].setEnable(false)
-							let v2 = view.mAggregations.columns[1]//pegarlinha[i].setEnable(false)
-							let v3 = view.mAggregations.columns[2]//pegarlinha[i].setEnable(false)
-						}
-					}
-				}
-				//
 				var stringParam = "/EditarMarcacaoSet";
 				var aFilters = [];
 				var oFilter = new sap.ui.model.Filter({
@@ -59,6 +46,29 @@ sap.ui.define(["sap/ui/base/ManagedObject", "sap/m/MessageBox", "./utilities", "
 						oData.results[i].DATA_DISPLAY = oData.results[i].DATUM.substring(6, 8) + "/" + oData.results[i].DATUM.substring(4, 6) + "/" +
 							oData.results[i].DATUM.substring(0, 4);
 						var enabled = false;
+
+						//aqui
+						var table = sap.ui.getCore().getModel("TratamentoPonto")
+						for(let j = 0; j < table.length; j++){
+							item = table[j];
+							if(item.DT_OCOR == oData.results[i].DATUM){
+								break;
+							}
+						}
+						const arr = [];
+						if(item.DT_OCOR == oData.results[i].DATUM){
+							for(let i = 0; i < item.objetosMarcacoes.length; i++){
+								if(item.objetosMarcacoes[i].mProperties.state){
+									if(item.objetosMarcacoes[i].mProperties.state == "Error"){
+										arr.push(true);
+									}
+									else{
+										arr.push(false);
+									}
+								}
+							}
+						
+						}
 						// Estrutura para montar os dados de marca��o
 
 						for (var indx = 0; indx < 4; indx++) {
@@ -72,6 +82,10 @@ sap.ui.define(["sap/ui/base/ManagedObject", "sap/m/MessageBox", "./utilities", "
 								enabled = true;
 							} else {
 								enabled = false;
+							}
+
+							if(arr.length > indx){
+								if(enabled)	enabled = arr[indx]
 							}
 
 							oData.results[i].newStructure.push({
@@ -115,39 +129,11 @@ sap.ui.define(["sap/ui/base/ManagedObject", "sap/m/MessageBox", "./utilities", "
 			_onSegButtonPress: function _onSegButtonPress(oEvent) {
 				var oModel = this.getView().getModel("marksData");
 
-				//aqui
-				var item = sap.ui.getCore().getModel("TratamentoPonto").getSelectedPointTreatmentItems()[0];
-
 				for (var indx = 0; indx < 3; indx++) {
-					if(indx == 0){
-						var view0 = this.getView().byId("marksList0");
-						for(let i = 0; i < item.objetosMarcacoes.length; i++){
-							if(item.objetosMarcacoes[i].mProperties.state){
-								if(item.objetosMarcacoes[i].mProperties.state == "Error"){
-									let v1 = view.mAggregations.columns[0]//pegarlinha[i].setEnable(false)
-									let v2 = view.mAggregations.columns[1]//pegarlinha[i].setEnable(false)
-									let v3 = view.mAggregations.columns[2]//pegarlinha[i].setEnable(false)
-								}
-							}
-						}
-					}
-					if(indx == 2){
-						var view2 = this.getView().byId("marksList2");
-						for(let i = 0; i < item.objetosMarcacoes.length; i++){
-							if(item.objetosMarcacoes[i].mProperties.state){
-								if(item.objetosMarcacoes[i].mProperties.state == "Error"){
-									let v1 = view.mAggregations.columns[0]//pegarlinha[i].setEnable(false)
-									let v2 = view.mAggregations.columns[1]//pegarlinha[i].setEnable(false)
-									let v3 = view.mAggregations.columns[2]//pegarlinha[i].setEnable(false)
-								}
-							}
-						}
-					}
 					if (oModel.getObject("/results/" + indx)) {
 						oModel.setProperty("/results/" + indx + "/VISIBLE", false);
 					}
 				}
-
 				oModel.setProperty("/results/" + this._oView.byId("segButton").getSelectedKey() + "/VISIBLE", true);
 			},
 			getMarkEditReasonData: function getMarkEditReasonData() {
