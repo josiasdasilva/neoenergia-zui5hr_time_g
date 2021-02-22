@@ -59,7 +59,7 @@ sap.ui.define(["sap/ui/base/ManagedObject", "sap/m/MessageBox", "./utilities", "
 						if(item.DT_OCOR == oData.results[i].DATUM){
 							for(let z = 0; z < item.objetosMarcacoes.length; z++){
 								if(item.objetosMarcacoes[z].mProperties.state){
-									if(item.objetosMarcacoes[z].mProperties.state == "Error"){
+									if(item.objetosMarcacoes[z].mProperties.state == "Success"){
 										arr.push(true);
 									}
 									else{
